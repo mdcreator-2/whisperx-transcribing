@@ -1,3 +1,13 @@
+import warnings
+import torch
+
+# Mute the torchcodec warning
+warnings.filterwarnings("ignore")
+
+# Mute the TF32 warning
+torch.backends.cuda.matmul.allow_tf32 = True
+torch.backends.cudnn.allow_tf32 = True
+
 import whisperx
 import json
 import os
